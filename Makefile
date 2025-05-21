@@ -18,8 +18,8 @@ SUBS_PATH = subs
 SRC_PATH = src
 
 HANDLERS = handlers
-PARSER = parsers
-SRC = \
+PARSERS = parsers
+SRC = $(SRC_PATH)/$(PARSERS)/is_argument_valid.c \
 
 INCLUDES = -I./$(SUBS_PATH)/mlx/ -I/usr/include -I./include/ -I./$(SUBS_PATH)/libft/include/
 LIBRARIES = -L$(SUBS_PATH)/libft/build/bin/ -L$(SUBS_PATH)/mlx/ -L/usr/lib -lft -lmlx -Ilmx -lXext -lX11 -lm -lz
@@ -48,9 +48,12 @@ clangd:
 
 clean:
 	rm -f $(OBJS)
+	make -C $(SUBS_PATH)/libft clean
+	make -C $(SUBS_PATH)/mlx clean
 	
 fclean: clean
 	rm -f $(NAME)
+	make -C $(SUBS_PATH)/libft fclean 
 
 re: fclean all
 
