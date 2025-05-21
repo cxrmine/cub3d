@@ -19,7 +19,9 @@ SRC_PATH = src
 
 HANDLERS = handlers
 PARSERS = parsers
-SRC = $(SRC_PATH)/$(PARSERS)/is_argument_valid.c \
+SRC = $(SRC_PATH)/$(PARSERS)/is_extension_valid.c \
+	  $(SRC_PATH)/$(PARSERS)/is_file_valid.c \
+
 
 INCLUDES = -I./$(SUBS_PATH)/mlx/ -I/usr/include -I./include/ -I./$(SUBS_PATH)/libft/include/
 LIBRARIES = -L$(SUBS_PATH)/libft/build/bin/ -L$(SUBS_PATH)/mlx/ -L/usr/lib -lft -lmlx -Ilmx -lXext -lX11 -lm -lz
