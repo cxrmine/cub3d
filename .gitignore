@@ -88,3 +88,6 @@ build/**
 minishell-rl-leak.suppr
 push_swap_tester/
 push_swap_visualizer/
+
+# test files
+*.dump
