@@ -17,6 +17,6 @@
 
 # define FILE_EXTENSION 1
 
-bool	is_argument_valid(const char *arg);
+bool	is_extension_valid(const char *arg);
 
 #endif

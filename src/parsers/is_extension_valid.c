@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_argument_valid.c                                :+:      :+:    :+:   */
+/*   is_extension_valid.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmalkawi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 10:57:26 by tmalkawi          #+#    #+#             */
-/*   Updated: 2025/05/21 10:57:26 by tmalkawi         ###   ########.fr       */
+/*   Updated: 2025/05/21 12:56:04 by tmalkawi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <parsers.h>
 #include <stdlib.h>
 
-bool	is_argument_valid(const char *arg)
+bool	is_extension_valid(const char *arg)
 {
 	char	**ext;
 
