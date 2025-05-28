@@ -16,8 +16,10 @@
 # include <stdbool.h>
 
 # define FILE_EXTENSION 1
+# define ERR_BADSTRING "InputError: You must provide a map\n"
 
-bool	is_extension_valid(const char *arg);
-bool	is_file_valid(const char *arg);
+bool	parse_map_extvalid(const char *arg);
+bool	parse_map_fdvalid(const char *arg);
+bool	parse_map(const char *arg);
 
 #endif
