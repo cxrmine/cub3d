@@ -17,6 +17,11 @@
 
 # define FILE_EXTENSION 1
 
+typedef enum e_args {
+	ARGS_PROG_NAME,
+	ARGS_FILE_NAME,
+}	t_args;
+
 bool	parse_map_extvalid(const char *arg);
 bool	parse_map_fdvalid(const char *arg);
 void	parse_map(const char *arg);
