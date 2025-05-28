@@ -22,8 +22,11 @@ typedef enum e_args {
 	ARGS_FILE_NAME,
 }	t_args;
 
+bool	parse_noargs(const int ac);
+bool	parse_manyargs(const int ac);
 bool	parse_map_extvalid(const char *arg);
 bool	parse_map_fdvalid(const char *arg);
 void	parse_map(const char *arg);
+void	parse_args(const int ac);
 
 #endif

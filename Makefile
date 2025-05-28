@@ -22,6 +22,9 @@ PARSERS = parsers
 SRC = $(SRC_PATH)/$(PARSERS)/parse_map_extvalid.c \
 	  $(SRC_PATH)/$(PARSERS)/parse_map_fdvalid.c \
 	  $(SRC_PATH)/$(PARSERS)/parse_map.c \
+	  $(SRC_PATH)/$(PARSERS)/parse_args.c \
+	  $(SRC_PATH)/$(PARSERS)/parse_noargs.c \
+	  $(SRC_PATH)/$(PARSERS)/parse_manyargs.c \
 	  $(SRC_PATH)/$(HANDLERS)/handle_err.c \
 
 
