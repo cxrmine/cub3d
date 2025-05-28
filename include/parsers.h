@@ -19,6 +19,6 @@
 
 bool	parse_map_extvalid(const char *arg);
 bool	parse_map_fdvalid(const char *arg);
-bool	parse_map(const char *arg);
+void	parse_map(const char *arg);
 
 #endif
