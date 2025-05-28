@@ -19,4 +19,8 @@ void	parse_map(const char *arg)
 	if (ft_strnnul(arg))
 		return (handler_err("Expected a string, got (nil) instead",
 				ERR_BADSTRING));
+	if (!parse_map_extvalid(arg))
+		return (handler_err("invalid extension", ERR_BADEXT));
+	if (!parse_map_fdvalid(arg))
+		return (handler_err("Invalid file", ERR_BADFILE));
 }
