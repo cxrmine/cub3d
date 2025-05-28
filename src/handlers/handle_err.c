@@ -15,7 +15,7 @@
 #include <errno.h>
 #include <string.h>
 
-void	handler_err(const char *err, const char *err_type)
+void	handle_err(const char *err, const char *err_type)
 {
 	if (ft_strnnul(err))
 		return (exit(EXIT_FAILURE));

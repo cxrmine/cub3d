@@ -18,6 +18,6 @@
 # define ERR_BADFILE	"FileError"
 # define ERR_BADARGS	"ArgumentError"
 
-void	handler_err(const char *err, const char *err_type);
+void	handle_err(const char *err, const char *err_type);
 
 #endif
