@@ -20,12 +20,12 @@ bool	parse_map_extvalid(const char *arg)
 	char	**ext;
 
 	if (arg == NULL)
-		return (NULL);
+		return (false);
 	if (arg[0] == '\0')
-		return (NULL);
+		return (false);
 	ext = ft_split(arg, '.');
 	if (ext == NULL)
-		return (NULL);
+		return (false);
 	if (ext[FILE_EXTENSION] == NULL)
 		return (ft_free_tab((void **) ext), false);
 	if (ft_strcmp(ext[FILE_EXTENSION], ".cub") != 0)

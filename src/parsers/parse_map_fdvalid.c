@@ -20,9 +20,9 @@ bool	parse_map_fdvalid(const char *arg)
 	int	fd;
 
 	if (arg == NULL)
-		return (NULL);
+		return (false);
 	if (arg[0] == '\0')
-		return (NULL);
+		return (false);
 	fd = open(arg, O_RDONLY, 0777);
 	if (fd < 0)
 		return (close(fd), false);
