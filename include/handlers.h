@@ -13,6 +13,11 @@
 #ifndef HANDLERS_H
 # define HANDLERS_H
 
-void	handler_err(const char *err);
+# define ERR_BADSTRING	"InputError"
+# define ERR_BADEXT		"ExtensionError"
+# define ERR_BADFILE	"FileError"
+# define ERR_BADARGS	"ArgumentError"
+
+void	handler_err(const char *err, const char *err_type);
 
 #endif

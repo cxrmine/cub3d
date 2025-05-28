@@ -16,7 +16,6 @@
 # include <stdbool.h>
 
 # define FILE_EXTENSION 1
-# define ERR_BADSTRING "InputError: You must provide a map\n"
 
 bool	parse_map_extvalid(const char *arg);
 bool	parse_map_fdvalid(const char *arg);
