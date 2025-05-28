@@ -16,9 +16,7 @@
 
 int	main(int argc, char **argv)
 {
-	ft_printf("ac = %d\n", argc);
-	ft_printf("av[1] = %s\n", argv[1]);
-	if (!is_argument_valid(argv[1]))
-		return (EXIT_FAILURE);
+	(void) argc;
+	parse_map(argv[ARGS_PROG_NAME]);
 	return (EXIT_SUCCESS);
 }
