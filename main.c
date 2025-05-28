@@ -17,6 +17,6 @@
 int	main(int argc, char **argv)
 {
 	(void) argc;
-	parse_map(argv[ARGS_PROG_NAME]);
+	parse_map(argv[ARGS_FILE_NAME]);
 	return (EXIT_SUCCESS);
 }
