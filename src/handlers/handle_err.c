@@ -21,6 +21,6 @@ void	handle_err(const char *err, const char *err_type)
 		return (exit(EXIT_FAILURE));
 	if (errno > 0)
 		printf("Caught error: %s\n", strerror(errno));
-	printf("%s: %s", err_type, err);
+	printf("%s: %s\n", err_type, err);
 	exit(EXIT_FAILURE);
 }
