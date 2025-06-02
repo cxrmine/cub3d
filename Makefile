@@ -42,12 +42,12 @@ all: $(NAME)
 $(NAME): $(SRC_OBJECT)
 	make -C $(SUBS_PATH)/libft
 	make -C $(SUBS_PATH)/mlx
-	$(CC) $(CFLAGS) $(SRC_OBJECT) $(INCLUDES) $(LIBRARIES) -o $@
+	$(CC) $(CFLAGS) $(SRC_OBJECT) $(INCLUDES) $(LIBRARIES) -o $@ -g3
 
 $(BUILD_PATH)/%.o: %.c
 	@mkdir -p $(dir $(NAME))
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ -g3
 
 clean:
 	rm -f $(OBJS)
@@ -66,5 +66,8 @@ re: fclean all
 
 clangd:
 	bear -- make re
+
+debug:
+	$(CC) $(CFLAGS) $(SRC) $(INCLUDES) $(LIBRARIES) -o debug -g3
 
 .PHONY: all clean fclean re
