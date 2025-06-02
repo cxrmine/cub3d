@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include "parsers.h"
+#include <stdio.h>
 
 bool	parse_manyargs(const int ac)
 {
-	return (ac > 1);
+	return (ac > 2);
 }

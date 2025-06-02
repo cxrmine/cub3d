@@ -14,5 +14,5 @@
 
 bool	parse_noargs(const int ac)
 {
-	return (ac == 0);
+	return (ac == 1);
 }
