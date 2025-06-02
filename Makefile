@@ -22,7 +22,8 @@ SUBS_PATH = subs
 SRC_PATH = src
 HANDLERS = handlers
 PARSERS = parsers
-SRC = $(SRC_PATH)/$(PARSERS)/parse_map_extvalid.c \
+SRC = main.c \
+	  $(SRC_PATH)/$(PARSERS)/parse_map_extvalid.c \
 	  $(SRC_PATH)/$(PARSERS)/parse_map_fdvalid.c \
 	  $(SRC_PATH)/$(PARSERS)/parse_map.c \
 	  $(SRC_PATH)/$(PARSERS)/parse_args.c \
@@ -41,7 +42,7 @@ all: $(NAME)
 $(NAME): $(SRC_OBJECT)
 	make -C $(SUBS_PATH)/libft
 	make -C $(SUBS_PATH)/mlx
-	$(CC) $(CFLAGS) $(MAIN_FILE) $(SRC) $(INCLUDES) $(LIBRARIES) -o $@
+	$(CC) $(CFLAGS) $(SRC_OBJECT) $(INCLUDES) $(LIBRARIES) -o $@
 
 $(BUILD_PATH)/%.o: %.c
 	@mkdir -p $(dir $(NAME))
