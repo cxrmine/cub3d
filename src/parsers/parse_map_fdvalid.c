@@ -14,14 +14,13 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include "libft.h"
 
 bool	parse_map_fdvalid(const char *arg)
 {
 	int	fd;
 
-	if (arg == NULL)
-		return (false);
-	if (arg[0] == '\0')
+	if (ft_strnul(arg))
 		return (false);
 	fd = open(arg, O_RDONLY, 0777);
 	if (fd < 0)

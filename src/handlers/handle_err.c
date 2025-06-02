@@ -17,7 +17,7 @@
 
 void	handle_err(const char *err, const char *err_type)
 {
-	if (ft_strnnul(err))
+	if (ft_strnul(err))
 		return (exit(EXIT_FAILURE));
 	if (errno > 0)
 		printf("Caught error: %s\n", strerror(errno));

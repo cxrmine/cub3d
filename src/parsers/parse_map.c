@@ -16,7 +16,7 @@
 
 void	parse_map(const char *arg)
 {
-	if (!ft_strnnul(arg))
+	if (ft_strnul(arg))
 		return (handle_err("Expected a string, got (nil) instead",
 				ERR_BADSTRING));
 	if (!parse_map_extvalid(arg))
