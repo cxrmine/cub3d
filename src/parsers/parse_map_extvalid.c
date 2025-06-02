@@ -28,7 +28,7 @@ bool	parse_map_extvalid(const char *arg)
 		return (false);
 	if (ext[FILE_EXTENSION] == NULL)
 		return (ft_free_tab((void **) ext), false);
-	if (ft_strcmp(ext[FILE_EXTENSION], ".cub") != 0)
+	if (ft_strcmp(ext[FILE_EXTENSION], "cub") != 0)
 		return (ft_free_tab((void **) ext), false);
 	ft_free_tab((void **) ext);
 	return (true);
