@@ -23,8 +23,8 @@ void	init_texture(t_game *game)
 	game->texture_north = malloc(sizeof(t_texture));
 	game->texture_south = malloc(sizeof(t_texture));
 	game->texture_west = malloc(sizeof(t_texture));
-	if (game->texture_south || game->texture_west
-		|| game->texture_east || game->texture_north)
+	if (game->texture_south == NULL || game->texture_west == NULL
+		|| game->texture_east == NULL || game->texture_north == NULL)
 		return ;
 	ft_bzero(game->texture_east, sizeof(t_texture));
 	ft_bzero(game->texture_north, sizeof(t_texture));
