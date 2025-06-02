@@ -10,7 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "handlers.h"
 #include "parsers.h"
 
 void	parse_args(const int ac)
-{}
+{
+	if (parse_noargs(ac))
+		return (handle_err("Please provide an input, a map by preference",
+				ERR_BADARGS));
+	if (parse_manyargs(ac))
+		return (handle_err("Too many arguments provided", ERR_BADARGS));
+	return ;
+}
