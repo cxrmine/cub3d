@@ -40,6 +40,9 @@ typedef struct s_texture {
 typedef struct s_player {
 	const char	*orientation;
 	t_image		*img;
+	int			pos_x;
+	int			pos_y;
+	int			pos_z;
 }	t_player;
 
 typedef struct s_image {
