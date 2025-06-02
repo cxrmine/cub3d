@@ -17,6 +17,7 @@
 # define ERR_BADEXT		"ExtensionError"
 # define ERR_BADFILE	"FileError"
 # define ERR_BADARGS	"ArgumentError"
+# define ERR_BADALLOC	"AllocError"
 
 void	handle_err(const char *err, const char *err_type);
 
