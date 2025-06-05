@@ -36,10 +36,11 @@ void	map_convert_matrix(const char *arg, t_game *game)
 		line = get_next_line(fd);
 		if (line == NULL)
 			break ;
-		append = map_convert_string(append, line);
+		append = map_convert_string((const char **) &append, line);
 		free(line);
 		if (append == NULL)
 			break ;
 	}
 	close(fd);
+	free(append);
 }
