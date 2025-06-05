@@ -21,6 +21,7 @@ BUILD_PATH = build
 SUBS_PATH = subs
 SRC_PATH = src
 HANDLERS = handlers
+INITIALIZERS = initializers
 PARSERS = parsers
 SRC = main.c \
 	  $(SRC_PATH)/$(PARSERS)/parse_map_extvalid.c \
@@ -30,6 +31,12 @@ SRC = main.c \
 	  $(SRC_PATH)/$(PARSERS)/parse_noargs.c \
 	  $(SRC_PATH)/$(PARSERS)/parse_manyargs.c \
 	  $(SRC_PATH)/$(HANDLERS)/handle_err.c \
+	  $(SRC_PATH)/$(INITIALIZERS)/init.c \
+	  $(SRC_PATH)/$(INITIALIZERS)/init_game.c \
+	  $(SRC_PATH)/$(INITIALIZERS)/init_image.c \
+	  $(SRC_PATH)/$(INITIALIZERS)/init_map.c \
+	  $(SRC_PATH)/$(INITIALIZERS)/init_player.c \
+	  $(SRC_PATH)/$(INITIALIZERS)/init_texture.c \
 
 
 SRC_OBJECT = $(addprefix build/, $(patsubst %.c, %.o, $(SRC)))
