@@ -15,6 +15,7 @@
 #include "handlers.h"
 #include "initializers.h"
 #include "libft.h"
+#include "map.h"
 #include "parsers.h"
 
 int	main(int argc, char **argv)
@@ -26,6 +27,7 @@ int	main(int argc, char **argv)
 	game = init();
 	if (game == NULL)
 		return (EXIT_FAILURE);
+	map_convert_matrix(argv[ARGS_FILE_NAME], game);
 	handle_memalloc(game);
 	return (EXIT_SUCCESS);
 }
