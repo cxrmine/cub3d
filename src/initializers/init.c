@@ -10,3 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "game.h"
+#include "initializers.h"
+
+t_game	*init(void)
+{
+	t_game	*game;
+
+	game = init_game();
+	return (game);
+}
