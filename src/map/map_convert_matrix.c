@@ -30,6 +30,7 @@ void	map_convert_matrix(const char *arg, t_game *game)
 	fd = open(arg, O_RDONLY, 0777);
 	if (fd == -1)
 		return (handle_err("Failed to read file", ERR_BADFILE));
+	append = ft_strdup("");
 	while (true)
 	{
 		line = get_next_line(fd);
@@ -37,6 +38,8 @@ void	map_convert_matrix(const char *arg, t_game *game)
 			break ;
 		append = map_convert_string(append, line);
 		free(line);
+		if (append == NULL)
+			break ;
 	}
 	close(fd);
 }
