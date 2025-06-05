@@ -14,12 +14,13 @@
 # define INITIALIZERS_H
 
 # include "game.h"
+# include <stdbool.h>
 
 t_game	*init_game(void);
 t_game	*init(void);
-void	init_image(t_game *game);
-void	init_map(t_game *game);
-void	init_player(t_game *game);
-void	init_texture(t_game *game);
+bool	init_image(t_game *game);
+bool	init_map(t_game *game);
+bool	init_player(t_game *game);
+bool	init_texture(t_game *game);
 
 #endif

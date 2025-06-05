@@ -14,11 +14,15 @@
 #include "initializers.h"
 #include <stdlib.h>
 
-void	init_player(t_game *game)
+bool	init_player(t_game *game)
 {
 	if (game == NULL)
-		return ;
+		return (false);
+	game->player = malloc(sizeof(t_player));
+	if (game->player == NULL)
+		return (false);
 	game->player->img = malloc(sizeof(t_image));
 	if (game->player->img == NULL)
-		return ;
+		return (false);
+	return (true);
 }
