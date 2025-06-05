@@ -31,6 +31,7 @@ SRC = main.c \
 	  $(SRC_PATH)/$(PARSERS)/parse_noargs.c \
 	  $(SRC_PATH)/$(PARSERS)/parse_manyargs.c \
 	  $(SRC_PATH)/$(HANDLERS)/handle_err.c \
+	  $(SRC_PATH)/$(HANDLERS)/handle_memalloc.c \
 	  $(SRC_PATH)/$(INITIALIZERS)/init.c \
 	  $(SRC_PATH)/$(INITIALIZERS)/init_game.c \
 	  $(SRC_PATH)/$(INITIALIZERS)/init_image.c \
