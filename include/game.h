@@ -28,8 +28,8 @@ typedef struct s_game {
 }	t_game;
 
 typedef struct s_map {
-	const char	*map_matrix;
-	char		**map_string;
+	const char	*map_string;
+	char		**map_matrix;
 }	t_map;
 
 typedef struct s_texture {

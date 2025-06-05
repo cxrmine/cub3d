@@ -17,11 +17,13 @@
 #include <fcntl.h>
 #include <stdbool.h>
 
+static char	*convert_map(int fd);
+
 void	map_convert_matrix(const char *arg, t_game *game)
 {
 	int		fd;
-	char	*line;
 	char	*append;
+	char	**split;
 
 	(void) game;
 	if (ft_strnul(arg))
@@ -30,6 +32,19 @@ void	map_convert_matrix(const char *arg, t_game *game)
 	fd = open(arg, O_RDONLY, 0777);
 	if (fd == -1)
 		return (handle_err("Failed to read file", ERR_BADFILE));
+	append = convert_map(fd);
+	close(fd);
+	split = ft_split(append, '\n');
+	game->map->map_matrix = split;
+	game->map->map_string = append;
+	free(append);
+}
+
+static char	*convert_map(int fd)
+{
+	char	*line;
+	char	*append;
+
 	append = ft_strdup("");
 	while (true)
 	{
@@ -41,6 +56,5 @@ void	map_convert_matrix(const char *arg, t_game *game)
 		if (append == NULL)
 			break ;
 	}
-	close(fd);
-	free(append);
+	return (append);
 }
