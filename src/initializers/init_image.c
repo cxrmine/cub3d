@@ -12,6 +12,7 @@
 
 #include "game.h"
 #include "initializers.h"
+#include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -28,5 +29,9 @@ bool	init_image(t_game *game)
 		|| game->texture_south->mlx_image == NULL
 		|| game->texture_west->mlx_image == NULL)
 		return (false);
+	ft_bzero(game->texture_east->mlx_image, sizeof(t_image));
+	ft_bzero(game->texture_west->mlx_image, sizeof(t_image));
+	ft_bzero(game->texture_south->mlx_image, sizeof(t_image));
+	ft_bzero(game->texture_north->mlx_image, sizeof(t_image));
 	return (true);
 }

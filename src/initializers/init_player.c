@@ -12,6 +12,7 @@
 
 #include "game.h"
 #include "initializers.h"
+#include "libft.h"
 #include <stdlib.h>
 
 bool	init_player(t_game *game)
@@ -21,8 +22,10 @@ bool	init_player(t_game *game)
 	game->player = malloc(sizeof(t_player));
 	if (game->player == NULL)
 		return (false);
+	ft_bzero(game->player, sizeof(t_player));
 	game->player->img = malloc(sizeof(t_image));
 	if (game->player->img == NULL)
 		return (false);
+	ft_bzero(game->player->img, sizeof(t_image));
 	return (true);
 }

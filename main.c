@@ -24,6 +24,8 @@ int	main(int argc, char **argv)
 	parse_args(argc);
 	parse_map(argv[ARGS_FILE_NAME]);
 	game = init();
+	if (game == NULL)
+		return (EXIT_FAILURE);
 	handle_memalloc(game);
 	return (EXIT_SUCCESS);
 }

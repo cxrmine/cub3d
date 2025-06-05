@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "game.h"
 #include "initializers.h"
+#include "libft.h"
 #include <stdlib.h>
 
 bool	init_map(t_game *game)
@@ -20,5 +22,6 @@ bool	init_map(t_game *game)
 	game->map = malloc(sizeof(t_map));
 	if (game->map == NULL)
 		return (false);
+	ft_bzero(game->map, sizeof(t_map));
 	return (true);
 }
