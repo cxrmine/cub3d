@@ -11,12 +11,19 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "game.h"
+#include "handlers.h"
+#include "initializers.h"
 #include "libft.h"
 #include "parsers.h"
 
 int	main(int argc, char **argv)
 {
+	t_game	*game;
+
 	parse_args(argc);
 	parse_map(argv[ARGS_FILE_NAME]);
+	game = init();
+	handle_memalloc(game);
 	return (EXIT_SUCCESS);
 }
