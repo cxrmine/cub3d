@@ -15,7 +15,8 @@
 
 # include "game.h"
 
-t_game	*init_game(void);
+void	init_game(t_game *game);
+t_game	*init(void);
 void	init_image(t_game *game);
 void	init_map(t_game *game);
 void	init_player(t_game *game);

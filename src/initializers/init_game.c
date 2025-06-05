@@ -16,14 +16,11 @@
 #include "libft.h"
 #include <stdlib.h>
 
-t_game	*init_game(void)
+void	init_game(t_game *game)
 {
-	t_game	*game;
-
 	game = malloc(sizeof(t_game));
 	if (game == NULL)
-		return (NULL);
+		return ;
 	ft_bzero(game, sizeof(t_game));
 	init_texture(game);
-	return (game);
 }
