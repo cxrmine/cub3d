@@ -23,6 +23,7 @@ SRC_PATH = src
 HANDLERS = handlers
 INITIALIZERS = initializers
 PARSERS = parsers
+MAP = map
 SRC = main.c \
 	  $(SRC_PATH)/$(PARSERS)/parse_map_extvalid.c \
 	  $(SRC_PATH)/$(PARSERS)/parse_map_fdvalid.c \
@@ -38,6 +39,8 @@ SRC = main.c \
 	  $(SRC_PATH)/$(INITIALIZERS)/init_map.c \
 	  $(SRC_PATH)/$(INITIALIZERS)/init_player.c \
 	  $(SRC_PATH)/$(INITIALIZERS)/init_texture.c \
+	  $(SRC_PATH)/$(MAP)/map_convert_matrix.c \
+	  $(SRC_PATH)/$(MAP)/map_convert_string.c \
 
 
 SRC_OBJECT = $(addprefix build/, $(patsubst %.c, %.o, $(SRC)))
