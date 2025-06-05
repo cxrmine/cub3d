@@ -37,7 +37,6 @@ void	map_convert_matrix(const char *arg, t_game *game)
 	split = ft_split(append, '\n');
 	game->map->map_matrix = split;
 	game->map->map_string = append;
-	free(append);
 }
 
 static char	*convert_map(int fd)
