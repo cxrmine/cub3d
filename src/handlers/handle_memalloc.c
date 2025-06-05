@@ -10,15 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "game.h"
 #include "handlers.h"
+#include "libft.h"
 #include <stdlib.h>
+
+static void	free_map(t_game *game);
 
 void	handle_memalloc(t_game *game)
 {
 	if (game == NULL)
 		return ;
-	if (game->map)
-		free(game->map);
 	if (game->texture_east->mlx_image)
 		free(game->texture_east->mlx_image);
 	if (game->texture_north->mlx_image)
@@ -39,5 +41,21 @@ void	handle_memalloc(t_game *game)
 		free(game->texture_west);
 	if (game->texture_south)
 		free(game->texture_south);
+	free_map(game);
 	free(game);
+}
+
+static void	free_map(t_game *game)
+{
+	size_t	i;
+
+	i = -1;
+	while (++i < ft_strslen((const char **) game->map->map_matrix))
+		free(game->map->map_matrix[i]);
+	if (game->map->map_matrix)
+		free(game->map->map_matrix);
+	if (game->map->map_string)
+		free((char *) game->map->map_string);
+	if (game->map)
+		free(game->map);
 }
