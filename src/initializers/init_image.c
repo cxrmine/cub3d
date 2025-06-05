@@ -15,13 +15,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	init_image(t_game *game)
+bool	init_image(t_game *game)
 {
 	if (game == NULL)
-		return ;
-	game->player->img = malloc(sizeof(t_image));
+		return (false);
 	game->texture_east->mlx_image = malloc(sizeof(t_image));
 	game->texture_west->mlx_image = malloc(sizeof(t_image));
 	game->texture_south->mlx_image = malloc(sizeof(t_image));
 	game->texture_north->mlx_image = malloc(sizeof(t_image));
+	if (game->texture_east->mlx_image == NULL
+		|| game->texture_north->mlx_image == NULL
+		|| game->texture_south->mlx_image == NULL
+		|| game->texture_west->mlx_image == NULL)
+		return (false);
+	return (true);
 }

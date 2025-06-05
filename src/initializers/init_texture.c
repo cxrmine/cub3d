@@ -15,20 +15,20 @@
 #include "libft.h"
 #include <stdlib.h>
 
-void	init_texture(t_game *game)
+bool	init_texture(t_game *game)
 {
 	if (game == NULL)
-		return ;
+		return (false);
 	game->texture_east = malloc(sizeof(t_texture));
 	game->texture_north = malloc(sizeof(t_texture));
 	game->texture_south = malloc(sizeof(t_texture));
 	game->texture_west = malloc(sizeof(t_texture));
 	if (game->texture_south == NULL || game->texture_west == NULL
 		|| game->texture_east == NULL || game->texture_north == NULL)
-		return ;
+		return (false);
 	ft_bzero(game->texture_east, sizeof(t_texture));
 	ft_bzero(game->texture_north, sizeof(t_texture));
 	ft_bzero(game->texture_west, sizeof(t_texture));
 	ft_bzero(game->texture_south, sizeof(t_texture));
-	return ;
+	return (true);
 }

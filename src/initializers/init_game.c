@@ -24,6 +24,7 @@ t_game	*init_game(void)
 	if (game == NULL)
 		return (NULL);
 	ft_bzero(game, sizeof(t_game));
-	init_texture(game);
+	if (!init_texture(game))
+		return (handle_memalloc(game), NULL);
 	return (game);
 }

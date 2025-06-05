@@ -13,11 +13,12 @@
 #include "initializers.h"
 #include <stdlib.h>
 
-void	init_map(t_game *game)
+bool	init_map(t_game *game)
 {
 	if (game == NULL)
-		return ;
+		return (false);
 	game->map = malloc(sizeof(t_map));
 	if (game->map == NULL)
-		return ;
+		return (false);
+	return (true);
 }
