@@ -13,11 +13,11 @@
 #include "game.h"
 #include "handlers.h"
 #include "libft.h"
-#include "map.h"
 #include <fcntl.h>
 #include <stdbool.h>
 
 static char	*convert_map(int fd);
+static char	*realloc_append(const char **s1, const char *s2);
 
 void	parse_map(const char *arg, t_game *game)
 {
@@ -50,10 +50,25 @@ static char	*convert_map(int fd)
 		line = get_next_line(fd);
 		if (line == NULL)
 			break ;
-		append = map_convert_string((const char **) &append, line);
+		append = realloc_append((const char **) &append, line);
 		free(line);
 		if (append == NULL)
 			break ;
 	}
+	return (append);
+}
+
+static char	*realloc_append(const char **s1, const char *s2)
+{
+	char		*append;
+
+	if (ft_strnul(s2))
+		return (NULL);
+	append = ft_calloc(ft_strlen(*s1) + ft_strlen(s2) + 1, sizeof(char));
+	if (append == NULL)
+		return (NULL);
+	ft_strlcpy(append, *s1, ft_strlen(*s1) + 1);
+	ft_strlcat(append, s2, ft_strlen(*s1) + ft_strlen(s2) + 1);
+	free((char *) *s1);
 	return (append);
 }
