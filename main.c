@@ -17,17 +17,18 @@
 #include "libft.h"
 #include "map.h"
 #include "parsers.h"
+#include "checkers.h"
 
 int	main(int argc, char **argv)
 {
 	t_game	*game;
 
-	parse_args(argc);
-	parse_map(argv[ARGS_FILE_NAME]);
+	check_args(argc);
+	check_map(argv[ARGS_FILE_NAME]);
 	game = init();
 	if (game == NULL)
 		return (EXIT_FAILURE);
-	map_convert_matrix(argv[ARGS_FILE_NAME], game);
+	parse_map(argv[ARGS_FILE_NAME], game);
 	handle_memalloc(game);
 	return (EXIT_SUCCESS);
 }
