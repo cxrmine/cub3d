@@ -13,20 +13,10 @@
 #ifndef PARSERS_H
 # define PARSERS_H
 
-# include <stdbool.h>
+# include "game.h"
 
-# define FILE_EXTENSION 1
-
-typedef enum e_args {
-	ARGS_PROG_NAME,
-	ARGS_FILE_NAME,
-}	t_args;
-
-bool	parse_noargs(const int ac);
-bool	parse_manyargs(const int ac);
-bool	parse_map_extvalid(const char *arg);
-bool	parse_map_fdvalid(const char *arg);
-void	parse_map(const char *arg);
-void	parse_args(const int ac);
+void	parse_map(const char *arg, t_game game);
+void	parse_textures(t_game *game);
+void	parse_chart(t_game *game);
 
 #endif
