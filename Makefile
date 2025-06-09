@@ -22,15 +22,17 @@ SUBS_PATH = subs
 SRC_PATH = src
 HANDLERS = handlers
 INITIALIZERS = initializers
+CHECKERS = checkers
 PARSERS = parsers
 MAP = map
 SRC = main.c \
-	  $(SRC_PATH)/$(PARSERS)/parse_map_extvalid.c \
-	  $(SRC_PATH)/$(PARSERS)/parse_map_fdvalid.c \
-	  $(SRC_PATH)/$(PARSERS)/parse_map.c \
-	  $(SRC_PATH)/$(PARSERS)/parse_args.c \
-	  $(SRC_PATH)/$(PARSERS)/parse_noargs.c \
-	  $(SRC_PATH)/$(PARSERS)/parse_manyargs.c \
+	  $(SRC_PATH)/$(CHECKERS)/check_map_extvalid.c \
+	  $(SRC_PATH)/$(CHECKERS)/check_map_fdvalid.c \
+	  $(SRC_PATH)/$(CHECKERS)/check_map.c \
+	  $(SRC_PATH)/$(CHECKERS)/check_args.c \
+	  $(SRC_PATH)/$(CHECKERS)/check_noargs.c \
+	  $(SRC_PATH)/$(CHECKERS)/check_manyargs.c \
+	  $(SRC_PATH)/$(CHECKERS)/check_textures.c \
 	  $(SRC_PATH)/$(HANDLERS)/handle_err.c \
 	  $(SRC_PATH)/$(HANDLERS)/handle_memalloc.c \
 	  $(SRC_PATH)/$(INITIALIZERS)/init.c \
@@ -39,8 +41,7 @@ SRC = main.c \
 	  $(SRC_PATH)/$(INITIALIZERS)/init_map.c \
 	  $(SRC_PATH)/$(INITIALIZERS)/init_player.c \
 	  $(SRC_PATH)/$(INITIALIZERS)/init_texture.c \
-	  $(SRC_PATH)/$(MAP)/map_convert_matrix.c \
-	  $(SRC_PATH)/$(MAP)/map_convert_string.c \
+	  $(SRC_PATH)/$(PARSERS)/parse_map.c \
 
 
 SRC_OBJECT = $(addprefix build/, $(patsubst %.c, %.o, $(SRC)))
