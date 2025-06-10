@@ -29,6 +29,15 @@ bool	check_textures(t_game *game)
 		if (ft_strncmp(game->map->map_matrix[i], "NO",
 				ft_strlen(game->map->map_matrix[i])) == 0)
 			game->texture_north->image_path = get_tp(game->map->map_matrix[i]);
+		if (ft_strncmp(game->map->map_matrix[i], "SO",
+				ft_strlen(game->map->map_matrix[i])) == 0)
+			game->texture_south->image_path = get_tp(game->map->map_matrix[i]);
+		if (ft_strncmp(game->map->map_matrix[i], "WE",
+				ft_strlen(game->map->map_matrix[i])) == 0)
+			game->texture_west->image_path = get_tp(game->map->map_matrix[i]);
+		if (ft_strncmp(game->map->map_matrix[i], "EA",
+				ft_strlen(game->map->map_matrix[i])) == 0)
+			game->texture_east->image_path = get_tp(game->map->map_matrix[i]);
 	}
 	return (false);
 }
