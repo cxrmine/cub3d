@@ -16,6 +16,7 @@
 #include <stdlib.h>
 
 static void	free_map(t_game *game);
+static void	free_textures(t_game *game);
 
 void	handle_memalloc(t_game *game)
 {
@@ -33,6 +34,21 @@ void	handle_memalloc(t_game *game)
 		free(game->player->img);
 	if (game->player)
 		free(game->player);
+	free_map(game);
+	free_textures(game);
+	free(game);
+}
+
+static void	free_textures(t_game *game)
+{
+	if (game->texture_east->image_path)
+		free((char *) game->texture_east->image_path);
+	if (game->texture_north->image_path)
+		free((char *) game->texture_north->image_path);
+	if (game->texture_west->image_path)
+		free((char *) game->texture_west->image_path);
+	if (game->texture_south->image_path)
+		free((char *) game->texture_south->image_path);
 	if (game->texture_east)
 		free(game->texture_east);
 	if (game->texture_north)
@@ -41,8 +57,6 @@ void	handle_memalloc(t_game *game)
 		free(game->texture_west);
 	if (game->texture_south)
 		free(game->texture_south);
-	free_map(game);
-	free(game);
 }
 
 static void	free_map(t_game *game)

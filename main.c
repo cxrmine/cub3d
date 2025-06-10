@@ -16,6 +16,7 @@
 #include "initializers.h"
 #include "parsers.h"
 #include "checkers.h"
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 {

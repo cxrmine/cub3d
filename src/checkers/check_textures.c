@@ -24,20 +24,22 @@ bool	check_textures(t_game *game)
 	if (game == NULL)
 		return (false);
 	i = -1;
-	while (game->map->map_matrix[i++])
+	while (game->map->map_matrix[++i])
 	{
 		tex_p = parse_textures(game->map->map_matrix[i]);
+		if (tex_p == NULL)
+			break ;
 		if (ft_strncmp(game->map->map_matrix[i], "NO",
-				ft_strlen(game->map->map_matrix[i])) == 0)
+				ft_strlen("NO")) == 0)
 			game->texture_north->image_path = tex_p;
 		if (ft_strncmp(game->map->map_matrix[i], "SO",
-				ft_strlen(game->map->map_matrix[i])) == 0)
+				ft_strlen("SO")) == 0)
 			game->texture_south->image_path = tex_p;
 		if (ft_strncmp(game->map->map_matrix[i], "WE",
-				ft_strlen(game->map->map_matrix[i])) == 0)
+				ft_strlen("WE")) == 0)
 			game->texture_west->image_path = tex_p;
 		if (ft_strncmp(game->map->map_matrix[i], "EA",
-				ft_strlen(game->map->map_matrix[i])) == 0)
+				ft_strlen("EA")) == 0)
 			game->texture_east->image_path = tex_p;
 	}
 	return (true);

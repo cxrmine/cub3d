@@ -17,7 +17,7 @@ char	*parse_textures(char *texture_config)
 {
 	char	**split;
 	size_t	i;
-	char	*path;
+	bool	whitespace;
 
 	if (ft_strnul(texture_config))
 		return (NULL);
@@ -25,12 +25,16 @@ char	*parse_textures(char *texture_config)
 	if (split == NULL)
 		return (NULL);
 	if (ft_strslen((const char **) split) != 2)
-		return (NULL);
+		return (ft_free_tab((void **) split), NULL);
 	i = -1;
-	while (split[++i])
-		if (i == TEXTURE_PATH)
+	whitespace = false;
+	while (texture_config[++i])
+	{
+		if (ft_iswhitespace(texture_config[i]))
+			whitespace = true;
+		if (whitespace == true && !ft_iswhitespace(texture_config[i]))
 			break ;
-	path = ft_strdup(split[i]);
+	}
 	ft_free_tab((void **) split);
-	return (path);
+	return (ft_substr(texture_config, i, ft_strlen(texture_config) - i - 1));
 }
