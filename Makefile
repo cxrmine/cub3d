@@ -28,6 +28,7 @@ MAP = map
 SRC = main.c \
 	  $(SRC_PATH)/$(CHECKERS)/check_map_extvalid.c \
 	  $(SRC_PATH)/$(CHECKERS)/check_map_fdvalid.c \
+	  $(SRC_PATH)/$(CHECKERS)/check_textures.c \
 	  $(SRC_PATH)/$(CHECKERS)/check_map.c \
 	  $(SRC_PATH)/$(CHECKERS)/check_args.c \
 	  $(SRC_PATH)/$(CHECKERS)/check_noargs.c \

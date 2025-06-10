@@ -14,8 +14,6 @@
 #include "game.h"
 #include "handlers.h"
 #include "initializers.h"
-#include "libft.h"
-#include "map.h"
 #include "parsers.h"
 #include "checkers.h"
 
