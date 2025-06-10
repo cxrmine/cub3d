@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmalkawi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/28 09:32:28 by tmalkawi          #+#    #+#             */
-/*   Updated: 2025/06/09 15:51:18 by tmalkawi         ###   ########.fr       */
+/*   Created: 2025/06/10 12:13:29 by tmalkawi          #+#    #+#             */
+/*   Updated: 2025/06/10 12:13:29 by tmalkawi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "handlers.h"
 #include "libft.h"
 #include "checkers.h"
 
-void	check_map(const char *arg, t_game *game)
+char	*parse_textures(char *texture_config)
 {
-	if (ft_strnul(arg))
-		return (handle_err("Expected a string, got (nil) instead",
-				ERR_BADSTRING));
-	if (!check_map_extvalid(arg))
-		return (handle_err("invalid extension", ERR_BADEXT));
-	if (!check_map_fdvalid(arg))
-		return (handle_err("Invalid file", ERR_BADFILE));
-	if (!check_textures(game))
-		return (handle_err("Invalid texture", ERR_BADCONF));
+	char	**split;
+	size_t	i;
+	char	*path;
+
+	if (ft_strnul(texture_config))
+		return (NULL);
+	split = ft_split(texture_config, ' ');
+	if (split == NULL)
+		return (NULL);
+	if (ft_strslen((const char **) split) != 2)
+		return (NULL);
+	i = -1;
+	while (split[++i])
+		if (i == TEXTURE_PATH)
+			break ;
+	path = ft_strdup(split[i]);
+	ft_free_tab((void **) split);
+	return (path);
 }

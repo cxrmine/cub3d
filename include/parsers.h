@@ -16,7 +16,7 @@
 # include "game.h"
 
 void	parse_map(const char *arg, t_game *game);
-void	parse_textures(t_game *game);
+char	*parse_textures(char *texture_config);
 void	parse_chart(t_game *game);
 
 #endif

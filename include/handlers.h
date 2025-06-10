@@ -18,6 +18,7 @@
 # define ERR_BADFILE	"FileError"
 # define ERR_BADARGS	"ArgumentError"
 # define ERR_BADALLOC	"AllocError"
+# define ERR_BADCONF	"ConfigError"
 
 # include "game.h"
 

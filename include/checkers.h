@@ -29,7 +29,7 @@ bool	check_manyargs(const int ac);
 bool	check_map_extvalid(const char *arg);
 bool	check_map_fdvalid(const char *arg);
 bool	check_textures(t_game *game);
-void	check_map(const char *arg);
+void	check_map(const char *arg, t_game *game);
 void	check_args(const int ac);
 
 #endif

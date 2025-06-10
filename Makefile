@@ -33,7 +33,6 @@ SRC = main.c \
 	  $(SRC_PATH)/$(CHECKERS)/check_args.c \
 	  $(SRC_PATH)/$(CHECKERS)/check_noargs.c \
 	  $(SRC_PATH)/$(CHECKERS)/check_manyargs.c \
-	  $(SRC_PATH)/$(CHECKERS)/check_textures.c \
 	  $(SRC_PATH)/$(HANDLERS)/handle_err.c \
 	  $(SRC_PATH)/$(HANDLERS)/handle_memalloc.c \
 	  $(SRC_PATH)/$(INITIALIZERS)/init.c \
@@ -43,6 +42,7 @@ SRC = main.c \
 	  $(SRC_PATH)/$(INITIALIZERS)/init_player.c \
 	  $(SRC_PATH)/$(INITIALIZERS)/init_texture.c \
 	  $(SRC_PATH)/$(PARSERS)/parse_map.c \
+	  $(SRC_PATH)/$(PARSERS)/parse_textures.c \
 
 
 SRC_OBJECT = $(addprefix build/, $(patsubst %.c, %.o, $(SRC)))
